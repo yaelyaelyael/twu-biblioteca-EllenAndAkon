@@ -4,10 +4,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 /**
  * Created by egalperi on 6/16/15.
@@ -15,11 +16,13 @@ import static org.mockito.Mockito.when;
 public class BibliotecaTest {
     private PrintStream printStream;
     private Biblioteca biblioteca;
+    private List<Book> books;
 
     @Before
     public void setUp() {
         printStream = mock(PrintStream.class);
-        biblioteca = new Biblioteca(printStream);
+        books = new ArrayList<Book>();
+        biblioteca = new Biblioteca(printStream, books);
     }
 
     @Test
@@ -32,7 +35,24 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void testItPrintsListOfBooks() {
+    public void shouldPrintNothingWhenThereAreNoBooks() {
+        biblioteca.listBooks();
+
+        verify(printStream).println("");
+    }
+
+    @Test
+    public void shouldPrintOneBookWhenThereIsOneBook() {
+        books.add(new Book("Harry Potter"));
+        biblioteca.listBooks();
+
+        verify(printStream).println("Harry Potter");
+    }
+
+    @Test
+    public void shouldPrintAllBooksWhenThereAreMoreThanOneBook() {
+        books.add(new Book("Harry Potter"));
+        books.add(new Book("Lord of the Rings"));
         biblioteca.listBooks();
 
         verify(printStream).println("Harry Potter");

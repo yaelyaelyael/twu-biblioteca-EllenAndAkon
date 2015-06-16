@@ -1,7 +1,12 @@
 package com.twu.biblioteca;
 
+import com.sun.deploy.util.ArrayUtil;
+import com.sun.deploy.util.StringUtils;
+import sun.swing.StringUIClientPropertyKey;
+
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by egalperi on 6/16/15.
@@ -9,13 +14,11 @@ import java.util.ArrayList;
 public class Biblioteca {
 
     private PrintStream printStream;
-    private ArrayList<Book> books;
+    private List<Book> books;
 
-    public Biblioteca(PrintStream printStream) {
+    public Biblioteca(PrintStream printStream, List<Book> books) {
         this.printStream = printStream;
-        books = new ArrayList<Book>();
-        books.add(new Book("Harry Potter"));
-        books.add(new Book("Lord of the Rings"));
+        this.books = books;
     }
 
     public void start() {
@@ -27,5 +30,6 @@ public class Biblioteca {
     public void listBooks() {
         for (Book book : books)
             printStream.println(book.getName());
+        printStream.println("");
     }
 }
