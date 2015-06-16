@@ -20,6 +20,7 @@ public class Biblioteca {
 
     public void start() {
         printStream.println("Welcome to Biblioteca!");
+        listBooks();
     }
 
     public void listBooks() {
