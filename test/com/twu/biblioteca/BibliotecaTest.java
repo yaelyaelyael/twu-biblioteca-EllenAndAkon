@@ -27,7 +27,7 @@ public class BibliotecaTest {
 
         biblioteca.start();
 
-        verify(printStream).println("Welcome to Biblioteca!");
+        verify(printStream).println("Welcome to Biblioteca! Here is a list of all library books:");
 
     }
 
