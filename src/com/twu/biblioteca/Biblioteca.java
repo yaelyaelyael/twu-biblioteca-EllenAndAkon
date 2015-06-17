@@ -23,8 +23,12 @@ public class Biblioteca {
     }
 
     public void listBooks() {
-        for (Book book : books)
-            printStream.println(book.getTitle());
+        printStream.println("title    |    author    |    year published");
+        printStream.println("-------------------------------------------");
+        for (Book book : books) {
+            printStream.println(book.details());
+        }
+
         printStream.println("");
     }
 }

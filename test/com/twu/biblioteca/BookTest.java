@@ -14,6 +14,7 @@ public class BookTest {
 
     @Before
     public void setUp() {
+
         title = "Book Title";
         author = "Author";
         yearPublished = "2000";
@@ -21,18 +22,8 @@ public class BookTest {
     }
 
     @Test
-    public void testBookHasName() {
-        assertEquals(book.getTitle(), title);
-    }
-
-    @Test
-    public void shouldHaveAnAuthor() {
-        assertEquals(book.getAuthor(), author);
-    }
-
-    @Test
-    public void shouldHaveAYearPublished() {
-        assertEquals(book.getYearPublished(), yearPublished);
+    public void shouldGetBookDetailsWhenListingBooks() {
+        assertEquals(book.details(), "Book Title    |    Author    |    2000");
     }
 
 }
