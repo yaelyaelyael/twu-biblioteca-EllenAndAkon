@@ -19,19 +19,21 @@ public class BibliotecaTest {
     private PrintStream printStream;
     private Biblioteca biblioteca;
     private List<Book> books;
+    private Menu menu;
 
     @Before
     public void setUp() {
         printStream = mock(PrintStream.class);
         books = new ArrayList<Book>();
-        biblioteca = new Biblioteca(printStream, books);
+        menu = mock(Menu.class);
+        biblioteca = new Biblioteca(printStream, books, menu);
     }
 
     @Test
     public void shouldPrintWelcomeMessageWhenAppStarts(){
         biblioteca.start();
 
-        verify(printStream).println("Welcome to Biblioteca! Please select a menu option:");
+        verify(printStream).println("Welcome to Biblioteca!");
     }
 
     @Test
@@ -66,12 +68,6 @@ public class BibliotecaTest {
         verify(printStream).println("book2 details");
     }
 
-    @Test
-    public void shouldListMainMenuOptionListBooksWhenAppStart(){
-        biblioteca.start();
-
-        verify(printStream).println("List Books");
-    }
 }
 
 

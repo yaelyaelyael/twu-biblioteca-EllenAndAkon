@@ -10,20 +10,22 @@ public class Biblioteca {
 
     private PrintStream printStream;
     private List<Book> books;
+    private Menu menu;
 
-    public Biblioteca(PrintStream printStream, List<Book> books) {
+    public Biblioteca(PrintStream printStream, List<Book> books, Menu menu) {
         this.printStream = printStream;
         this.books = books;
+        this.menu = menu;
     }
 
     public void start() {
         printWelcomeMessage();
-        printStream.println("List Books");
+        menu.displayMenu();
         listBooks();
     }
 
     private void printWelcomeMessage() {
-        printStream.println("Welcome to Biblioteca! Please select a menu option:");
+        printStream.println("Welcome to Biblioteca!");
         printStream.println("");
     }
 

@@ -15,6 +15,7 @@ public class Book {
     }
 
     public String details() {
+
         return String.format("%-15s %-15s %-30s %n", title, author, yearPublished);
     }
 
