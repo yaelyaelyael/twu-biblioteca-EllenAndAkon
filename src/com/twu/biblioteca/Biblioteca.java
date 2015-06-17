@@ -28,12 +28,13 @@ public class Biblioteca {
     }
 
     public void listBooks() {
-        printStream.println("title    |    author    |    year published");
-        printStream.println("-------------------------------------------");
-        for (Book book : books) {
-            printStream.println(book.details());
+        if(books.isEmpty()) {
+            printStream.println("No books available");
+        } else {
+            printStream.println(books.get(0).columnHeadings());
+            for (Book book : books) {
+                printStream.println(book.details());
+            }
         }
-
-        printStream.println("");
     }
 }

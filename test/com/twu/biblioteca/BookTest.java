@@ -3,7 +3,12 @@ package com.twu.biblioteca;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.PrintStream;
+
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class BookTest {
 
@@ -28,7 +33,8 @@ public class BookTest {
 
     @Test
     public void shouldReturnColumnHeadingsWhenListingBooks() {
-        assertEquals(book.columnHeadings(), "Title    |    Author    |    Year Published");
+        String details = String.format("%-15s %-15s %-30s %n", "Title", "Author", "Year Published");
+        assertEquals(book.columnHeadings(), details);
     }
 
 }
