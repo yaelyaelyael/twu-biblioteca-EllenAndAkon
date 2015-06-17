@@ -7,7 +7,6 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -26,12 +25,12 @@ public class BibliotecaTest {
         printStream = mock(PrintStream.class);
         books = new ArrayList<Book>();
         menu = mock(Menu.class);
-        biblioteca = new Biblioteca(printStream, books, menu);
+        biblioteca = new Biblioteca(printStream, books);
     }
 
     @Test
     public void shouldPrintWelcomeMessageWhenAppStarts(){
-        biblioteca.start();
+        biblioteca.printWelcomeMessage();
 
         verify(printStream).println("Welcome to Biblioteca!");
     }

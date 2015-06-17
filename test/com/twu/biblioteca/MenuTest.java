@@ -15,19 +15,35 @@ import static org.mockito.Mockito.verify;
 public class MenuTest {
 
     private PrintStream printStream;
+    private Menu menu;
+    private Biblioteca biblioteca;
 
     @Before
     public void setUp() {
        printStream = mock(PrintStream.class);
+       biblioteca = mock(Biblioteca.class);
+       menu = new Menu(printStream, biblioteca);
     }
 
 
     @Test
     public void shouldDisplayFirstMenuOptionWhenThereIsOneMenuOption() {
-        Menu menu = new Menu(printStream);
-
         menu.displayMenu();
 
         verify(printStream).println(contains("List Books"));
     }
+
+    @Test
+    public void shouldPerformMenuSelectionWhenUserInputIsEntered() {
+
+    }
+
+    @Test
+    public void shouldListBooksWhenListBooksOptionIsSelected() {
+        menu.performMenuSelection();
+
+        verify(biblioteca).listBooks();
+    }
+
+
 }

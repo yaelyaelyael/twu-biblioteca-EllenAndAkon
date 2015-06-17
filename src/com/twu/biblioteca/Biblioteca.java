@@ -3,28 +3,17 @@ package com.twu.biblioteca;
 import java.io.PrintStream;
 import java.util.List;
 
-/**
- * Created by egalperi on 6/16/15.
- */
 public class Biblioteca {
 
     private PrintStream printStream;
     private List<Book> books;
-    private Menu menu;
 
-    public Biblioteca(PrintStream printStream, List<Book> books, Menu menu) {
+    public Biblioteca(PrintStream printStream, List<Book> books) {
         this.printStream = printStream;
         this.books = books;
-        this.menu = menu;
     }
 
-    public void start() {
-        printWelcomeMessage();
-        menu.displayMenu();
-        listBooks();
-    }
-
-    private void printWelcomeMessage() {
+    public void printWelcomeMessage() {
         printStream.println("Welcome to Biblioteca!");
         printStream.println("");
     }
