@@ -18,11 +18,12 @@ public class Menu {
 
     public void displayMenu() {
         printStream.println("Please select a menu option: ");
-        printStream.println("List Books");
+        printStream.println("1. List Books");
     }
 
-    public void performMenuSelection() {
+    public void performMenuSelection() { //NOT IMPLEMENTED YET
         biblioteca.listBooks();
 
     }
+
 }

@@ -33,10 +33,14 @@ public class MenuTest {
         verify(printStream).println(contains("List Books"));
     }
 
-    @Test
-    public void shouldPerformMenuSelectionWhenUserInputIsEntered() {
-
-    }
+//    @Test
+//    public void shouldPerformMenuSelectionWhenUserInputIsEntered() { //NEED TO MOVE
+//        String userInput = "1. List Books";
+//
+//        menu.processUserInput(userInput);
+//
+//        verify(menu).performMenuSelection();
+//    }
 
     @Test
     public void shouldListBooksWhenListBooksOptionIsSelected() {
