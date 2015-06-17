@@ -28,7 +28,8 @@ public class BookTest {
 
     @Test
     public void shouldGetBookDetailsWhenListingBooks() {
-        assertEquals(book.details(), "Book Title    |    Author    |    2000");
+        String details = String.format("%-15s %-15s %-30s %n", title, author, yearPublished);
+        assertEquals(book.details(), details);
     }
 
     @Test
