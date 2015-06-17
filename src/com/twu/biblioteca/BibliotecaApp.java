@@ -26,7 +26,12 @@ public class BibliotecaApp {
     public void start() {
         biblioteca.printWelcomeMessage();
         menu.displayMenu();
-        menu.performMenuSelection();
+        String userInput = getUserInput();
+        menu.performMenuSelection(userInput);
     }
 
+    public String getUserInput() { //NOT FULLY IMPLEMENTED
+        String userInput = "";
+        return userInput;
+    }
 }

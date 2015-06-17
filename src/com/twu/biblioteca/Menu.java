@@ -21,9 +21,10 @@ public class Menu {
         printStream.println("1. List Books");
     }
 
-    public void performMenuSelection() { //NOT IMPLEMENTED YET
-        biblioteca.listBooks();
-
+    public void performMenuSelection(String userInput) {
+        if (userInput.contains("1") || userInput.contains("List Books")) {
+            biblioteca.listBooks();
+        }
     }
 
 }
