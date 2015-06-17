@@ -16,12 +16,6 @@ public class Menu {
         this.biblioteca = biblioteca;
     }
 
-    public void start() {
-        biblioteca.printWelcomeMessage();
-        displayMenu();
-        performMenuSelection();
-    }
-
     public void displayMenu() {
         printStream.println("Please select a menu option: ");
         printStream.println("List Books");

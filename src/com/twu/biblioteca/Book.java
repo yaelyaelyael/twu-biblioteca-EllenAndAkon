@@ -14,11 +14,11 @@ public class Book {
 
     public String details() {
 
-        return String.format("%-15s %-15s %-30s %n", title, author, yearPublished);
+        return String.format("%-25s %-25s %-30s %n", title, author, yearPublished);
     }
 
     public String columnHeadings() {
-        return String.format("%-15s %-15s %-30s %n", "Title", "Author", "Year Published");
+        return String.format("%-25s %-25s %-30s %n", "Title", "Author", "Year Published");
     }
 
 }
