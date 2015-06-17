@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class BibliotecaApp {
@@ -32,6 +35,13 @@ public class BibliotecaApp {
 
     public String getUserInput() { //NOT FULLY IMPLEMENTED
         String userInput = "";
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        try {
+            userInput = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return userInput;
     }
 }

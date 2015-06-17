@@ -3,6 +3,8 @@ package com.twu.biblioteca;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.List;
 
@@ -27,14 +29,14 @@ public class BibliotecaAppTest {
         bibliotecaApp = new BibliotecaApp(biblioteca, menu);
     }
 
-//    @Test
-//    public void shouldPerformMenuSelectionWhenUserInputIsEntered() {
-//        String userInput = "1. List Books";
-//
-//        bibliotecaApp.getUserInput();
-//
-//        verify(menu).performMenuSelection(userInput);
-//    }
+    @Test
+    public void shouldPerformAMenuSelectionWhenUserInputIsEntered() { //NEED TO FIX THIS TEST
+        String userInput = "1. List Books";
+
+        bibliotecaApp.getUserInput();
+
+        verify(menu).performMenuSelection(userInput);
+    }
 
 
 }
