@@ -43,7 +43,7 @@ public class BibliotecaTest {
 
     @Test
     public void shouldPrintOneBookWhenThereIsOneBook() {
-        books.add(new Book("Harry Potter"));
+        books.add(new Book("Harry Potter", "JK Rowling", "10"));
         biblioteca.listBooks();
 
         verify(printStream).println("Harry Potter");
@@ -51,8 +51,8 @@ public class BibliotecaTest {
 
     @Test
     public void shouldPrintAllBooksWhenThereAreMoreThanOneBook() {
-        books.add(new Book("Harry Potter"));
-        books.add(new Book("Lord of the Rings"));
+        books.add(new Book("Harry Potter", "", "10"));
+        books.add(new Book("Lord of the Rings", "", "10"));
         biblioteca.listBooks();
 
         verify(printStream).println("Harry Potter");

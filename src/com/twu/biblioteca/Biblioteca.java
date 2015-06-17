@@ -1,11 +1,6 @@
 package com.twu.biblioteca;
 
-import com.sun.deploy.util.ArrayUtil;
-import com.sun.deploy.util.StringUtils;
-import sun.swing.StringUIClientPropertyKey;
-
 import java.io.PrintStream;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,7 +24,7 @@ public class Biblioteca {
 
     public void listBooks() {
         for (Book book : books)
-            printStream.println(book.getName());
+            printStream.println(book.getTitle());
         printStream.println("");
     }
 }
