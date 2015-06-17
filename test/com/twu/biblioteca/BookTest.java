@@ -26,4 +26,9 @@ public class BookTest {
         assertEquals(book.details(), "Book Title    |    Author    |    2000");
     }
 
+    @Test
+    public void shouldReturnColumnHeadingsWhenListingBooks() {
+        assertEquals(book.columnHeadings(), "Title    |    Author    |    Year Published");
+    }
+
 }

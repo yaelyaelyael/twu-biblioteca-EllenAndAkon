@@ -17,9 +17,14 @@ public class Biblioteca {
     }
 
     public void start() {
-        printStream.println("Welcome to Biblioteca! Here is a list of all library books:");
-        printStream.println("");
+        printWelcomeMessage();
+        printStream.println("List Books");
         listBooks();
+    }
+
+    private void printWelcomeMessage() {
+        printStream.println("Welcome to Biblioteca! Please select a menu option:");
+        printStream.println("");
     }
 
     public void listBooks() {

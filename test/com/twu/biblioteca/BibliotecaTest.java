@@ -26,11 +26,11 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void testWelcomeMessagePrints(){
+    public void shouldPrintWelcomeMessageWhenAppStarts(){
 
         biblioteca.start();
 
-        verify(printStream).println("Welcome to Biblioteca! Here is a list of all library books:");
+        verify(printStream).println("Welcome to Biblioteca! Please select a menu option:");
 
     }
 
@@ -57,6 +57,13 @@ public class BibliotecaTest {
 
         verify(printStream).println("Harry Potter");
         verify(printStream).println("Lord of the Rings");
+    }
+
+    @Test
+    public void shouldListMainMenuOptionListBooksWhenAppStart(){
+        biblioteca.start();
+
+        verify(printStream).println("List Books");
     }
 }
 

@@ -17,4 +17,8 @@ public class Book {
     public String details() {
         return name + "    |    " + author + "    |    " + yearPublished;
     }
+
+    public String columnHeadings() {
+        return "Title    |    Author    |    Year Published";
+    }
 }
