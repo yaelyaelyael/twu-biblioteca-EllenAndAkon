@@ -9,10 +9,12 @@ public class BibliotecaApp {
 
     private Biblioteca biblioteca;
     private Menu menu;
+    private BufferedReader bufferedReader;
 
-    public BibliotecaApp(Biblioteca biblioteca, Menu menu){
+    public BibliotecaApp(Biblioteca biblioteca, Menu menu, BufferedReader bufferedReader){
         this.biblioteca = biblioteca;
         this.menu = menu;
+        this.bufferedReader = bufferedReader;
     }
 
     public static void main(String[] args) {
@@ -21,8 +23,9 @@ public class BibliotecaApp {
         Biblioteca biblioteca = new Biblioteca(System.out, books);
 
         Menu menu = new Menu(System.out, biblioteca);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(biblioteca, menu);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(biblioteca, menu, bufferedReader);
         bibliotecaApp.start();
         }
 
@@ -33,10 +36,8 @@ public class BibliotecaApp {
         menu.performMenuSelection(userInput);
     }
 
-    public String getUserInput() { //NOT FULLY IMPLEMENTED
+    public String getUserInput() {
         String userInput = "";
-        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         try {
             userInput = bufferedReader.readLine();
         } catch (IOException e) {
