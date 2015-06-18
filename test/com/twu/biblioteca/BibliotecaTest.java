@@ -18,13 +18,11 @@ public class BibliotecaTest {
     private PrintStream printStream;
     private Biblioteca biblioteca;
     private List<Book> books;
-    private Menu menu;
 
     @Before
     public void setUp() {
         printStream = mock(PrintStream.class);
         books = new ArrayList<Book>();
-        menu = mock(Menu.class);
         biblioteca = new Biblioteca(printStream, books);
     }
 

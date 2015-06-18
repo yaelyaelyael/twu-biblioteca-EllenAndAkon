@@ -28,13 +28,13 @@ public class BookTest {
 
     @Test
     public void shouldGetBookDetailsWhenListingBooks() {
-        String details = String.format("%-15s %-15s %-30s %n", title, author, yearPublished);
+        String details = String.format("%-25s %-25s %-30s %n", title, author, yearPublished);
         assertEquals(book.details(), details);
     }
 
     @Test
     public void shouldReturnColumnHeadingsWhenListingBooks() {
-        String details = String.format("%-15s %-15s %-30s %n", "Title", "Author", "Year Published");
+        String details = String.format("%-25s %-25s %-30s %n", "Title", "Author", "Year Published");
         assertEquals(book.columnHeadings(), details);
     }
 

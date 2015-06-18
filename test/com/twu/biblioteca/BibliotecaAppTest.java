@@ -20,22 +20,21 @@ import static org.mockito.Mockito.when;
 public class BibliotecaAppTest {
     private PrintStream printStream;
     private Biblioteca biblioteca;
-    private List<Book> books;
     private Menu menu;
     private BibliotecaApp bibliotecaApp;
-    private BufferedReader bufferedReader;
+    private AppBufferReader bufferedReader;
 
     @Before
     public void setUp() {
         this.printStream = mock(PrintStream.class);
         this.biblioteca = mock(Biblioteca.class);
         this.menu = mock(Menu.class);
-        this.bufferedReader = mock(BufferedReader.class);
+        this.bufferedReader = mock(AppBufferReader.class);
         bibliotecaApp = new BibliotecaApp(biblioteca, menu, bufferedReader);
     }
 
     @Test
-    public void shouldCallPerformMenuSelectionWhenUserInputIsEntered() throws IOException {
+    public void shouldCallPerformMenuSelectionWhenValidUserInputIsEntered() throws IOException {
         String userInput = "Test";
         when(bufferedReader.readLine()).thenReturn("Test");
 
@@ -43,6 +42,15 @@ public class BibliotecaAppTest {
 
         verify(menu).performMenuSelection(userInput);
     }
+
+//    @Test
+//    public void shouldPrintMessageWhenInvalidInputIsPassedToCheckForValidInput() throws IOException {
+//        String userInput = "Invalid Input";
+//
+//        bibliotecaApp.checkForInvalidInput(userInput);
+//
+//        verify(printStream).println("Select a valid option!");
+//    }
 
 
 }

@@ -9,9 +9,9 @@ public class BibliotecaApp {
 
     private Biblioteca biblioteca;
     private Menu menu;
-    private BufferedReader bufferedReader;
+    private AppBufferReader bufferedReader;
 
-    public BibliotecaApp(Biblioteca biblioteca, Menu menu, BufferedReader bufferedReader){
+    public BibliotecaApp(Biblioteca biblioteca, Menu menu, AppBufferReader bufferedReader){
         this.biblioteca = biblioteca;
         this.menu = menu;
         this.bufferedReader = bufferedReader;
@@ -23,7 +23,7 @@ public class BibliotecaApp {
         Biblioteca biblioteca = new Biblioteca(System.out, books);
 
         Menu menu = new Menu(System.out, biblioteca);
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        AppBufferReader bufferedReader = new AppBufferReader(new InputStreamReader(System.in));
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp(biblioteca, menu, bufferedReader);
         bibliotecaApp.start();
@@ -38,11 +38,10 @@ public class BibliotecaApp {
 
     public String getUserInput() {
         String userInput = "";
-        try {
-            userInput = bufferedReader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        userInput = bufferedReader.readLine();
         return userInput;
+    }
+
+    public void checkForInvalidInput(String userInput) {
     }
 }
