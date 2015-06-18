@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -9,12 +7,12 @@ public class BibliotecaApp {
 
     private Biblioteca biblioteca;
     private Menu menu;
-    private AppBufferReader bufferedReader;
+    private AppBufferReader appBufferReader;
 
-    public BibliotecaApp(Biblioteca biblioteca, Menu menu, AppBufferReader bufferedReader){
+    public BibliotecaApp(Biblioteca biblioteca, Menu menu, AppBufferReader appBufferReader){
         this.biblioteca = biblioteca;
         this.menu = menu;
-        this.bufferedReader = bufferedReader;
+        this.appBufferReader = appBufferReader;
     }
 
     public static void main(String[] args) {
@@ -23,9 +21,9 @@ public class BibliotecaApp {
         Biblioteca biblioteca = new Biblioteca(System.out, books);
 
         Menu menu = new Menu(System.out, biblioteca);
-        AppBufferReader bufferedReader = new AppBufferReader(new InputStreamReader(System.in));
+        AppBufferReader appBufferReader = new AppBufferReader(new InputStreamReader(System.in));
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(biblioteca, menu, bufferedReader);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(biblioteca, menu, appBufferReader);
         bibliotecaApp.start();
         }
 
@@ -38,7 +36,7 @@ public class BibliotecaApp {
 
     public String getUserInput() {
         String userInput = "";
-        userInput = bufferedReader.readLine();
+        userInput = appBufferReader.readLine();
         return userInput;
     }
 

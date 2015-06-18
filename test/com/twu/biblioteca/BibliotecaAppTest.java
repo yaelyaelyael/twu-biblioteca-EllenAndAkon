@@ -22,21 +22,21 @@ public class BibliotecaAppTest {
     private Biblioteca biblioteca;
     private Menu menu;
     private BibliotecaApp bibliotecaApp;
-    private AppBufferReader bufferedReader;
+    private AppBufferReader appBufferReader;
 
     @Before
     public void setUp() {
         this.printStream = mock(PrintStream.class);
         this.biblioteca = mock(Biblioteca.class);
         this.menu = mock(Menu.class);
-        this.bufferedReader = mock(AppBufferReader.class);
-        bibliotecaApp = new BibliotecaApp(biblioteca, menu, bufferedReader);
+        this.appBufferReader = mock(AppBufferReader.class);
+        bibliotecaApp = new BibliotecaApp(biblioteca, menu, appBufferReader);
     }
 
     @Test
     public void shouldCallPerformMenuSelectionWhenValidUserInputIsEntered() throws IOException {
         String userInput = "Test";
-        when(bufferedReader.readLine()).thenReturn("Test");
+        when(appBufferReader.readLine()).thenReturn("Test");
 
         bibliotecaApp.start();
 
